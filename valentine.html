@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine’s, OluTundun 💛</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap" rel="stylesheet">
+<style>
+    /* Basic Reset */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif; }
+  
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffe6f0, #fff0e6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+  
+    /* Floating Hearts Animation */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: 10px; top: 0; }
+  
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(45deg) scale(0.5); opacity:0.5; }
+      50% { opacity:1; }
+      100% { transform: translateY(-100vh) rotate(405deg) scale(1); opacity:0; }
+    }
+  
+    /* Main container */
+    .container {
+      width: 90%;
+      max-width: 550px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 2s ease forwards;
+    }
+  
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+  
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.8rem;
+      color: #ff4d6d;
+      margin-bottom: 20px;
+      animation: popIn 1s ease;
+    }
+  
+    @keyframes popIn {
+      0% { transform: scale(0); }
+      70% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      color: #333;
+      line-height: 1.5;
+      animation: slideIn 1.5s ease forwards;
+    }
+  
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity:0; }
+      to { transform: translateY(0); opacity:1; }
+    }
+  
+    button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Dancing Script', cursive;
+    }
+  
+    button:hover {
+      transform: scale(1.1) rotate(-5deg);
+      box-shadow: 0 6px 18px rgba(255,77,109,0.4);
+    }
+  
+    #surprise {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #ff3366;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+  
+    /* Media Queries */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      p { font-size: 1rem; }
+      button { font-size: 0.95rem; padding: 10px 20px; }
+    }
+  
+    @media (max-width: 480px) {
+      h1 { font-size: 1.8rem; }
+      p { font-size: 0.9rem; }
+      button { font-size: 0.85rem; padding: 8px 18px; }
+      .container { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hearts -->
+<script>
+  for(let i=0; i<20; i++){
+    let heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+    heart.style.width = heart.style.height = (15 + Math.random() * 15) + 'px';
+    document.body.appendChild(heart);
+  }
+</script>
+
+<div class="container">
+  <h1>Happy Valentine’s, Auntii Janetii 💛</h1>
+  <p>All I can say is ...<br>
+    I don't even know what to say sef 😏 <br>
+    Every little moment we share, even learning stuff together, makes me smile within 😊<br>
+    All these might look small but trust me, there's alot I would love to speak about but, let us kepp pushing, moving and advancing in life. <br>
+    There's alot that the world would offer, and i would Love to view it with you 💖💖
+</p>
+  <button onclick="showSurprise()">Click me for a little surprise</button>
+  <div id="surprise">No worry, surprise still plenty but no be here😄</div>
+</div>
+
+<script>
+  function showSurprise(){
+    const surprise = document.getElementById('surprise');
+    surprise.style.opacity = 1;
+  }
+</script>
+
+</body>
+</html>
